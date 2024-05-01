@@ -14,5 +14,3 @@ def SHA512(file_path: str):
       sha512.update(data)
 
   return sha512.digest()
-
-# print("SHA1: {0}".format(sha1.hexdigest()))

@@ -1,7 +1,9 @@
 #!env/bin/python
-import argparse
-import constants as c
 from os.path import isfile
+import argparse
+
+from colors import bcolors
+import constants as c
 import algorithm
 
 parser = argparse.ArgumentParser(prog=c.name, description=c.desc, epilog=c.epilog)
@@ -24,6 +26,6 @@ file1_hash = algorithm.SHA512(file1_path)
 file2_hash = algorithm.SHA512(file2_path)
 
 if (file1_hash == file2_hash):
-  print('Files has no modifications')
+  print(f'{bcolors.GREEN}Files has no modifications{bcolors.ENDC}')
 else:
-  print('Files have some (possibly malicious) modification')
+  print(f'{bcolors.RED}Files have some (possibly malicious) modifications{bcolors.ENDC}')
