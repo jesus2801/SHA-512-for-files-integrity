@@ -1,0 +1,29 @@
+#!env/bin/python
+import argparse
+import constants as c
+from os.path import isfile
+import algorithm
+
+parser = argparse.ArgumentParser(prog=c.name, description=c.desc, epilog=c.epilog)
+parser.add_argument('-i', dest='input', required=True, type=str, nargs='+', help=c.inputs)
+args = parser.parse_args()
+
+if (len(args.input) != 2):
+  parser.error('--input flag should contain exactly 2 files')
+
+file1_path = args.input[0]
+file2_path = args.input[1]
+
+if (not isfile(file1_path)):
+  parser.error('first file does not exist')
+
+if (not isfile(file2_path)):
+  parser.error('second file does not exist')
+
+file1_hash = algorithm.SHA512(file1_path)
+file2_hash = algorithm.SHA512(file2_path)
+
+if (file1_hash == file2_hash):
+  print('Files has no modifications')
+else:
+  print('Files have some (possibly malicious) modification')
