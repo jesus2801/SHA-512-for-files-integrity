@@ -15,7 +15,7 @@ If you are not on Linux, try to look for the equivalences in your OS.
 Make the file executable:
 
 ```
-sudo chmod +x ./AES
+sudo chmod +x ./check
 ```
 
 Run the .txt example:
@@ -37,7 +37,7 @@ Run the .png example:
 ./check -i tests/penguin1.png tests/penguin1.copy.png
 ```
 
-Note that `penguin1.png` is the original image, and `penguin2.png` seems to be the same image with the exact size but actually it is not the same one. `penguin2.png` was generated with a Steganography tool [here](https://stylesuxx.github.io/steganography/). The secret encrypted message is the content of `message.txt`. Finally `penguin1.copy.png` is a exact copy of `penguin1.png`
+Note that `penguin1.png` is the original image, and `penguin2.png` seems to be the same image with the exact size but actually they are not the same one. `penguin2.png` was generated with a Steganography tool [here](https://stylesuxx.github.io/steganography/). The secret message encrypted in the image is the content of `message.txt`. Finally `penguin1.copy.png` is a exact copy of `penguin1.png`
 
 **Penguin1.png:**
 ![alt text](https://github.com/jesus2801/SHA-512-for-files-integrity/blob/master/tests/penguin1.png?raw=true)
