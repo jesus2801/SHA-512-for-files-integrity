@@ -26,9 +26,9 @@ Run the .txt example:
 Note that the difference between `text1.txt` and `text2.txt` is that `text2.txt` does not have the
 final space that `text1.txt` have on the end of the first line.
 **Text 1:**
-![alt text](https://github.com/jesus2801/AES-for-file-encryption/blob/master/imgs/text1.png?raw=true)
+![alt text](https://github.com/jesus2801/SHA-512-for-files-integrity/blob/master/imgs/text1.png?raw=true)
 **Text 2:**
-![alt text](https://github.com/jesus2801/AES-for-file-encryption/blob/master/imgs/text2.png?raw=true)
+![alt text](https://github.com/jesus2801/SHA-512-for-files-integrity/blob/master/imgs/text2.png?raw=true)
 
 ## Authors
 
