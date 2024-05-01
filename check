@@ -6,25 +6,30 @@ from colors import bcolors
 import constants as c
 import algorithm
 
+# instance of the parser
 parser = argparse.ArgumentParser(prog=c.name, description=c.desc, epilog=c.epilog)
+# adds the input option
 parser.add_argument('-i', dest='input', required=True, type=str, nargs='+', help=c.inputs)
-args = parser.parse_args()
+args = parser.parse_args()  # reads the arguments
 
+# there should be exactly 2 parameters passed through the input option
 if (len(args.input) != 2):
   parser.error('--input flag should contain exactly 2 files')
 
+# verifying the existance of the two file paths
 file1_path = args.input[0]
 file2_path = args.input[1]
-
 if (not isfile(file1_path)):
   parser.error('first file does not exist')
 
 if (not isfile(file2_path)):
   parser.error('second file does not exist')
 
+# gets the hash of both files
 file1_hash = algorithm.SHA512(file1_path)
 file2_hash = algorithm.SHA512(file2_path)
 
+# if the hashes are the same, then we can guarantee the integrity of the file was conserved
 if (file1_hash == file2_hash):
   print(f'{bcolors.GREEN}Files has no modifications{bcolors.ENDC}')
 else:
